@@ -1,0 +1,19 @@
+{
+    "server":{
+        "starturls":[
+            "http://baidu.com",
+            "http://taobao.com"
+        ],
+        "urlrules":[
+        ]
+    },
+    "login":{
+        "getvalues":{},
+        "postvalues":{},
+        "loginurl":""
+    },
+    "system":{
+        "goroutinecounts":10,
+        "timesleep":100
+    }
+}

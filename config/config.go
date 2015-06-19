@@ -3,33 +3,32 @@ package config
 import (
 	"encoding/json"
 	"errors"
+	"fmt"
 	"os"
 )
 
 type HunterConfig struct {
 	Server Server
 	Login  Login
+	System System
 }
 type Server struct {
-	Url    []string
-	RegExp []string
+	StartUrls []string
+	UrlRules  []string
+}
+
+type System struct {
+	GoroutineCounts int
+	TimeSleep       int64
 }
 
 type Login struct {
-	Values LoginValues
-	Url    string
-}
-
-type LoginValues struct {
-	Url  string
-	Get  map[string]string
-	Post map[string]string
+	GetValues  map[string]string
+	PostValues map[string]string
+	LoginUrl   string
 }
 
 var Config HunterConfig
-
-func init() {
-}
 
 func LoadConfigFile(filename string) error {
 	file, err := os.Open(filename)
@@ -45,6 +44,7 @@ func LoadConfigFile(filename string) error {
 		return errors.New("config file is empty")
 	}
 	err = json.Unmarshal(content[:len], &Config)
+	fmt.Println(Config)
 	if err != nil {
 		return err
 	}
