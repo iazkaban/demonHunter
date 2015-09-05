@@ -1,0 +1,673 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HCG值班安排 - 互动娱乐系统 - ELEX</title>
+
+        
+
+                        
+    
+
+            <meta http-equiv="X-UA-Compatible" content="IE=8">
+<meta charset="UTF-8">
+
+<!-- Deprecated since 3.4. To be removed in a future version of Confluence; use AJS.Confluence.getContextPath() -->
+<meta id="confluence-context-path" name="confluence-context-path" content="">
+<meta name="ajs-context-path" content="">
+<meta name="ajs-version-number" content="3.5.3">
+<meta name="ajs-build-number" content="2154">
+<meta id="atlassian-token" name="atlassian-token" content="8475565494764448964c368b8662fae6beb9e9e7">
+<meta id="confluence-space-key" name="confluence-space-key" content="PRODUCT">
+<meta name="ajs-remote-user" content="wenbo">
+<meta name="ajs-static-resource-url-prefix" content="/s/zh/2154/29/_">
+
+<script type="text/javascript">
+    // Deprecated global variables. To be removed in a future version of Confluence.
+    var contextPath = '';
+</script>
+
+    
+
+<!-- include system css resources -->
+<link type="text/css" rel="stylesheet" href="http://wiki.elex-tech.com/s/zh/2154/29/131/_/download/superbatch/css/batch.css" media="all">
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="http://wiki.elex-tech.com/s/zh/2154/29/131/_/download/superbatch/css/batch.css?ieonly=true" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="http://wiki.elex-tech.com/s/zh/2154/29/131/_/download/superbatch/css/batch.css?media=print" media="print">
+<link type="text/css" rel="stylesheet" href="/s/zh/2154/29/1.20/_/download/batch/com.atlassian.confluence.plugins.pagetree:pagetree-resources/com.atlassian.confluence.plugins.pagetree:pagetree-resources.css" media="all">
+<link type="text/css" rel="stylesheet" href="http://wiki.elex-tech.com/s/zh/2154/29/1.0/_/download/resources/confluence.web.resources:aui-forms/confluence-forms.css" media="all">
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="http://wiki.elex-tech.com/s/zh/2154/29/1.0/_/download/batch/confluence.web.resources:aui-forms/confluence.web.resources:aui-forms.css?ieonly=true" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="http://wiki.elex-tech.com/s/zh/2154/29/1.6/_/download/batch/com.atlassian.confluence.plugins.share-page:mail-page-resources/com.atlassian.confluence.plugins.share-page:mail-page-resources.css" media="all">
+<link type="text/css" rel="stylesheet" href="/s/zh/2154/29/1.0/_/download/batch/confluence.web.resources:view-comment/confluence.web.resources:view-comment.css" media="all">
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="/s/zh/2154/29/1.0/_/download/batch/confluence.web.resources:view-comment/confluence.web.resources:view-comment.css?ieonly=true" media="all">
+<![endif]-->
+<link type="text/css" rel="stylesheet" href="http://wiki.elex-tech.com/s/zh/2154/29/1.16/_/download/batch/confluence.macros.advanced:fancy-box/confluence.macros.advanced:fancy-box.css" media="all">
+<link type="text/css" rel="stylesheet" href="/s/zh/2154/29/1.0.16/_/download/batch/com.atlassian.confluence.plugins.drag-and-drop:support/com.atlassian.confluence.plugins.drag-and-drop:support.css" media="all">
+<link type="text/css" rel="stylesheet" href="http://wiki.elex-tech.com/s/zh/2154/29/0.8/_/download/batch/com.atlassian.plugins.shortcuts.atlassian-shortcuts-module:shortcuts/com.atlassian.plugins.shortcuts.atlassian-shortcuts-module:shortcuts.css" media="all">
+<link type="text/css" rel="stylesheet" href="http://wiki.elex-tech.com/s/zh/2154/29/3.5.3/_/download/batch/com.atlassian.confluence.keyboardshortcuts:confluence-keyboard-shortcuts/com.atlassian.confluence.keyboardshortcuts:confluence-keyboard-shortcuts.css" media="all">
+
+<!-- end system css resources -->
+
+    <link rel="stylesheet" href="/s/zh/2154/29/3/_/styles/combined.css?spaceKey=PRODUCT" type="text/css">
+
+    <meta name="confluence-request-time" content="1436931677619">
+
+<meta name="loggedInUsername" content="wenbo">
+            <meta name="ajs-keyboardshortcut-hash" content="b16eff37f040fb0450ccc84ae84a27b9">
+    <!-- Deprecated since 3.4. To be removed in a future version of Confluence; use atl.header -->
+            <script type="text/x-template" title="share-content-popup">
+    <form action="#" method="post" class="aui share-content-popup">
+        <fieldset>
+            <label for="users">User name or email</label>
+            <div class="autocomplete-user-target">
+                <input class="text autocomplete-sharepage" id="users" data-max="10" data-dropdown-target=".autocomplete-user-target" data-none-message="No matching user or email found"/>
+            </div>
+            <ol class="recipients">
+            </ol>
+            <div><label for="note">Note</label></div>
+            <textarea class="textarea" id="note" placeholder="Add an optional note"/>
+        </fieldset>
+        <div class="button-panel">
+            <div class="progress-messages-icon"></div>
+            <div class="progress-messages">
+            </div>
+            <input class="button submit" type="submit" value="Share" disabled/>
+            <a class="close-dialog" href="#">Cancel</a>
+        </div>
+    </form>
+</script>
+
+<script type="text/x-template" title="share-content-popup-recipient-username">
+    <li data-username="{username}" style="display: none">
+        <span>
+            <img src="{thumbnailLink.href}" title="{title}">
+            <span>{title}</span>
+            <span class="remove-recipient"/>
+        </span>
+    </li>
+</script>
+
+<script type="text/x-template" title="share-content-popup-recipient-email">
+    <li data-email="{email}" style="display: none">
+        <span>
+            <img src="{icon}" title="{email}">
+            <span>{email}</span>
+            <span class="remove-recipient"/>
+        </span>
+    </li>
+</script>
+            <meta name="ajs-use-keyboard-shortcuts" content="true">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/s/zh/2154/29/_/images/logo/confluence_16.png">
+
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch/osd.action" title="ELEX"/>
+
+        <!-- include system javascript resources -->
+                        
+    
+    <script type="text/javascript" src="http://wiki.elex-tech.com/s/zh/2154/29/131/_/download/superbatch/js/batch.js" ></script>
+<script type="text/javascript" src="/s/zh/2154/29/1.20/_/download/batch/com.atlassian.confluence.plugins.pagetree:pagetree-resources/com.atlassian.confluence.plugins.pagetree:pagetree-resources.js" ></script>
+<script type="text/javascript" src="http://wiki.elex-tech.com/s/zh/2154/29/1.6/_/download/batch/com.atlassian.confluence.plugins.share-page:mail-page-resources/com.atlassian.confluence.plugins.share-page:mail-page-resources.js" ></script>
+<script type="text/javascript" src="http://wiki.elex-tech.com/s/zh/2154/29/1.16/_/download/batch/confluence.macros.advanced:fancy-box/confluence.macros.advanced:fancy-box.js" ></script>
+<script type="text/javascript" src="/s/zh/2154/29/1.16/_/download/batch/confluence.macros.advanced:thumbnail-images/confluence.macros.advanced:thumbnail-images.js" ></script>
+<script type="text/javascript" src="/s/zh/2154/29/1.0.16/_/download/batch/com.atlassian.confluence.plugins.drag-and-drop:support/com.atlassian.confluence.plugins.drag-and-drop:support.js" ></script>
+<script type="text/javascript" src="/s/zh/2154/29/1.0.16/_/download/batch/com.atlassian.confluence.plugins.drag-and-drop:drag-and-drop-for-view-content/com.atlassian.confluence.plugins.drag-and-drop:drag-and-drop-for-view-content.js" ></script>
+<script type="text/javascript" src="http://wiki.elex-tech.com/s/zh/2154/29/1.9/_/download/batch/com.atlassian.confluence.plugins.doctheme:splitter/com.atlassian.confluence.plugins.doctheme:splitter.js" ></script>
+<script type="text/javascript" src="http://wiki.elex-tech.com/s/zh/2154/29/0.8/_/download/batch/com.atlassian.plugins.shortcuts.atlassian-shortcuts-module:shortcuts/com.atlassian.plugins.shortcuts.atlassian-shortcuts-module:shortcuts.js" ></script>
+<script type="text/javascript" src="http://wiki.elex-tech.com/s/zh/2154/29/3.5.3/_/download/batch/com.atlassian.confluence.keyboardshortcuts:confluence-keyboard-shortcuts/com.atlassian.confluence.keyboardshortcuts:confluence-keyboard-shortcuts.js" ></script>
+<script type="text/javascript" src="http://wiki.elex-tech.com/s/zh/2154/29/1.0/_/download/batch/legacy.confluence.web.resources:prototype/legacy.confluence.web.resources:prototype.js" ></script>
+
+    
+    <!-- end system javascript resources -->
+
+    
+
+
+    
+    <link rel="canonical" href="http://share.elex-tech.com/pages/viewpage.action?pageId=33229931">
+    <link rel="shortlink" href="http://share.elex-tech.com/x/awz7AQ">
+    <meta name="wikilink" content="[PRODUCT:HCG值班安排]">
+    <meta name="page-version" content="55">
+
+</head>
+
+<body             onload="placeFocus()"
+     id="com-atlassian-confluence" class="theme-documentation ">
+<div id="full-height-container">
+    <div id="header-precursor">
+        
+        
+<fieldset class="hidden parameters">
+    <input type="hidden" id="shortcutDialogTip" value="Shortcut tip: Pressing <b>{shortcut}</b> also opens this dialog box">
+        <input type="hidden" title="i18n.close.name" value="关闭">
+        <input type="hidden" title="i18n.cancel.name" value="取消">
+</fieldset><fieldset class="hidden parameters">
+    <input type="hidden" id="statusDialogHeading" value="What are you working on?">
+    <input type="hidden" id="statusDialogAccessibilityLabel" value="Enter your status (140 character limit)">
+    <input type="hidden" id="statusDialogLatestLabel" value="Last update:">
+    <input type="hidden" id="statusDialogUpdateButtonLabel" value="Update">
+    <input type="hidden" id="statusDialogCancelButtonLabel" value="取消">
+</fieldset>
+
+<fieldset class="hidden parameters">
+    <input type="hidden" id="globalSettingsAttachmentMaxSize" value="10485760">
+    <input type="hidden" id="userLocale" value="zh_CN">
+    <input type="hidden" id="staticResourceUrlPrefix" value="/s/zh/2154/29/_">
+    <input type="hidden" id="contextPath" value="">
+</fieldset>
+                </div>
+
+<div id="header" class="sectionbottom ">
+        <form id="quick-search" class="quick-search" method="get" action="/dosearchsite.action">
+                <fieldset>
+            <input type="hidden" name="spaceSearch" value="false"/>
+        </fieldset>
+        <fieldset>
+            <legend>快速搜索</legend>
+            <input class="quick-search-query" id="quick-search-query" type="text" accessKey="q" autocomplete="off" name="queryString" size="25"/>
+            <input class="quick-search-submit" id="quick-search-submit" type="submit"  value="Search Confluence" />
+            <div class="aui-dd-parent quick-nav-drop-down"><!-- Quick nav appears here --></div>
+        </fieldset>
+        <fieldset class="hidden parameters">
+            <input type="hidden" id="quickNavEnabled" value="true" />
+                    </fieldset>
+    </form>
+
+    <ul id="header-menu-bar" class="ajs-menu-bar">
+                    
+        
+            <li class="normal ajs-menu-item">
+        <a id="browse-menu-link" class="browse trigger ajs-menu-title" href="#"><span><span>浏览</span></span></a>         <div class="assistive ajs-drop-down">
+                        <ul  id="browse-menu-link-leading"                 class="section-leading first">
+                                        <li>
+    
+        
+    
+    <a  id="space-pages-link" href="/pages/listpages.action?key=PRODUCT"  class=""   title="Browse pages in the 互动娱乐系统 space">
+                   <span>页面</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="space-blogposts-link" href="/pages/viewrecentblogposts.action?key=PRODUCT"  class=""   title="Browse blogs in the 互动娱乐系统 space">
+                   <span>消息</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="space-labels-link" href="/labels/listlabels-heatmap.action?key=PRODUCT"  class=""   title="Browse labels in the 互动娱乐系统 space">
+                   <span>标签</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="space-attachments-link" href="/spaces/listattachmentsforspace.action?key=PRODUCT"  class=""   title="Browse attachments in the 互动娱乐系统 space">
+                   <span>附件</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  href="/spaces/space-bookmarks.action?spaceKey=PRODUCT"  class=""   title="Browse bookmarks in the 互动娱乐系统 space">
+                   <span>Bookmarks</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="space-mail-link" href="/spaces/viewmailarchive.action?key=PRODUCT"  class=""   title="Browse mail in the 互动娱乐系统 space">
+                   <span>邮件</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="space-advanced-link" href="/spaces/viewspacesummary.action?key=PRODUCT"  class=""   title="Browse additional space functions in the 互动娱乐系统 space">
+                   <span>高级的</span></a>        </li>
+                            </ul>
+                        <ul  id="browse-menu-link-global"                 class="section-global">
+                                        <li>
+    
+        
+    
+    <a  id="whats-new-menu-link" href="http://docs.atlassian.com/confluence/docs-35/whatsnew/iframe"  class=""   title="">
+                   <span>What’s New</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="people-directory-link" href="/peopledirectory.action"  class=""   title="Browse the Confluence people directory">
+                   <span>人员目录</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="space-directory-link" href="/spacedirectory/view.action"  class=""   title="Browse the Confluence space directory">
+                   <span>Space Directory</span></a>        </li>
+                                        <li>
+    
+            
+    
+    <a  id="keyboard-shortcuts-link" href="#"  class=""   title="View available keyboard shortcuts">
+                   <span>Keyboard Shortcuts</span></a>        </li>
+                                        <li>
+    
+            
+    
+    <a  id="gadget-directory-link" href="#"  class="user-item administration-link"   title="Browse gadgets provided by Confluence">
+                   <span>Confluence Gadgets</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="administration-link" href="/admin/console.action"  class="user-item administration-link"   title="Manage and maintain Confluence">
+                   <span>系统管理</span></a>        </li>
+                            </ul>
+                    </div>
+    </li>
+        
+                                                                
+            <li class="normal ajs-menu-item">
+        <a id="user-menu-link" class="user trigger ajs-menu-title" href="#"><span><span>wenbo</span></span></a>         <div class="assistive ajs-drop-down">
+                        <ul  id="user-menu-link-user-status"                 class="section-user-status first">
+                                        <li>
+        
+        
+    
+    <a  id="set-user-status-link" href="/display/~wenbo"  class="user-item update-user-status"   title="Update your status">
+                   <span>Update Status&hellip;</span></a>        </li>
+                            </ul>
+                        <ul  id="user-menu-link-user-preferences"                 class="section-user-preferences">
+                                        <li>
+    
+        
+    
+    <a  id="create-personal-space-link" href="/spaces/createpersonalspace.action"  class="user-item personal-space"   title="">
+                   <span>创建个人空间</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="view-user-history-link" href="/users/viewuserhistory.action"  class="user-item user-history popup-link"   title="">
+                   <span>最近浏览的历史</span></a>        </li>
+                            </ul>
+                        <ul  id="user-menu-link-user-content"                 class="section-user-content">
+                                        <li>
+    
+        
+    
+    <a  id="view-user-profile-link" href="/users/viewmyprofile.action"  class="user-item user-profile"   title="">
+                   <span>个人资料</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  href="/users/viewfollow.action?username=wenbo"  class="follow-link"   title="">
+                   <span>网络</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  href="/display/status/wenbo/list"  class="user-item list-user-status"   title="">
+                   <span>状态更新</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="user-labels-link" href="/users/viewmylabels.action"  class="user-item"   title="">
+                   <span>标签</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="user-watches-link" href="/users/viewnotifications.action"  class="user-item"   title="">
+                   <span>监视</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="user-drafts-link" href="/users/viewmydrafts.action"  class="user-item"   title="">
+                   <span>草稿</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="user-settings-link" href="/users/viewmysettings.action"  class="user-item"   title="">
+                   <span>设置</span></a>        </li>
+                            </ul>
+                        <ul  id="user-menu-link-user-operations"                 class="section-user-operations">
+                                        <li>
+    
+        
+    
+    <a  id="logout-link" href="/logout.action"  class="user-item logout-link"   title="">
+                   <span>退出</span></a>        </li>
+                            </ul>
+                    </div>
+    </li>
+                        <li class="normal ajs-menu-item">
+            <div id="splitter-button" class="hidden" title="Show or hide sidebar"></div>
+        </li>
+
+    </ul>
+    
+    
+    <ol id="breadcrumbs">
+                    
+                        
+        <li class="first" >
+                                            <span><a href="/dashboard.action" title="Go to Dashboard">数字面板</a></span>
+                </li>
+                    
+                
+        <li>
+                                            <span><a href="/display/PRODUCT">互动娱乐系统</a></span>
+                </li>
+                                        <li id="ellipsis" title="Show all breadcrumbs"><span><strong>&#8230;</strong></span></li>
+                                    
+                
+        <li class="hidden-crumb" >
+                                            <span><a href="/pages/viewpage.action?pageId=294925">在持续快速迭代中创新</a></span>
+                </li>
+                                
+                
+        <li class="hidden-crumb" >
+                                            <span><a href="/pages/viewpage.action?pageId=12419406">运营</a></span>
+                </li>
+                                
+                
+        <li class="hidden-crumb" >
+                                            <span><a href="/pages/viewpage.action?pageId=24772741">游戏运营信息汇总</a></span>
+                </li>
+                    
+                
+        <li>
+                                            <span><a href="/pages/viewpage.action?pageId=33229428">HCG客服组信息汇总</a></span>
+                </li>
+                    
+                
+        <li>
+                                            <span>HCG值班安排</span>
+                </li>
+        </ol>
+
+</div>
+
+    <div id="splitter">
+    <div id="splitter-sidebar" >
+        
+
+                    
+        
+    
+
+<div class="plugin_pagetree">
+
+                <div id="pagetreesearch">
+            <form method="POST" action="/plugins/pagetreesearch/pagetreesearch.action" name="pagetreesearchform">
+                                    <input type="hidden" name="ancestorId" value="294925">
+                                <input type="hidden" name="spaceKey" value="PRODUCT">
+                <input type="text"  size="20" name="queryString">
+                <input type="submit" value="Search">
+            </form>
+        </div>
+    
+        
+    <ul class="plugin_pagetree_children_list plugin_pagetree_children_list_noleftspace">
+        <div class="plugin_pagetree_children">
+        </div>
+    </ul>
+
+    <fieldset class="hidden">
+        <input type="hidden" name="treeId" value="">
+        <input type="hidden" name="treeRequestId" value="/plugins/pagetree/naturalchildren.action?decorator=none&amp;excerpt=false&amp;sort=position&amp;reverse=false&amp;disableLinks=false">
+        <input type="hidden" name="treePageId" value="33229931">
+
+        <input type="hidden" name="noRoot" value="false">
+        <input type="hidden" name="rootPageId" value="294925">
+
+        <input type="hidden" name="rootPage" value="">
+        <input type="hidden" name="startDepth" value="0">
+        <input type="hidden" name="spaceKey" value="PRODUCT" >
+
+        <input type="hidden" name="i18n-pagetree.loading" value="Loading...">
+        <input type="hidden" name="i18n-pagetree.error.permission" value="Unable to load page tree. It seems that you do not have permission to view the root page.">
+        <input type="hidden" name="i18n-pagetree.eeror.general" value="There was a problem retrieving the page tree. Please check the server log file for more information.">
+        <input type="hidden" name="loginUrl" value="/login.action?os_destination=%2Fpages%2Fviewpage.action%3FpageId%3D33229931">
+
+                <fieldset class="hidden">
+                                                <input type="hidden" name="ancestorId" value="33229428">
+                                    <input type="hidden" name="ancestorId" value="24772741">
+                                    <input type="hidden" name="ancestorId" value="12419406">
+                                    <input type="hidden" name="ancestorId" value="294925">
+                                    </fieldset>
+    </fieldset>
+</div>
+
+
+
+            </div>
+    <div id="splitter-content">
+
+                    <script type="text/javascript" src="/s/zh/2154/29/1.9/_/download/resources/com.atlassian.confluence.plugins.doctheme:resources/doc-theme.js"></script>
+    
+            
+    
+<div id="main" >
+    <div id="main-header">
+	    
+	    
+    <div id="navigation" class="content-navigation view">
+        <fieldset class="hidden parameters">
+            <input type="hidden" id="pageId" value="33229931">
+        </fieldset>
+        <ul class="ajs-menu-bar">
+                                <li class="ajs-button normal">
+    
+        
+    
+    <a  id="editPageLink" href="/pages/editpage.action?pageId=33229931"  class="edit"  accessKey="e"  title="Edit">
+                   <span>编辑</span></a>        </li>
+                    <li class="ajs-button normal">
+    
+            
+    
+    <a  id="shareContentLink" href="#"  class="share"  accessKey="e"  title="Share this content by emailing other users">
+                   <span>Share</span></a>        </li>
+                    
+            <li class="normal ajs-menu-item">
+        <a id="add-menu-link" class="add trigger ajs-menu-title" href="#"><span><span>添加</span></span></a>         <div class="assistive ajs-drop-down">
+                        <ul  id="add-menu-link-space"                 class="section-space first">
+                                        <li>
+    
+        
+    
+    <a  id="createPageLink" href="/pages/createpage.action?spaceKey=PRODUCT&amp;fromPageId=33229931"  class="add-page"  accessKey="p"  title="Add a Page">
+                   <span>页面</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="createBlogpostLink" href="/pages/createblogpost.action?spaceKey=PRODUCT"  class="add-news"   title="Add a Blog Post">
+                   <span>消息</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  href="/plugins/socialbookmarking/updatebookmark.action?spaceKey=PRODUCT&amp;redirect=spacebookmarks"  class=""   title="">
+                    <span>
+                <img alt="Bookmark" src="/images/icons/adfav_16.gif" height="16" width="16" title="Bookmark">
+                Bookmark
+            </span></a>        </li>
+                            </ul>
+                        <ul  id="add-menu-link-page"                 class="section-page">
+                                        <li>
+    
+        
+    
+    <a  id="add-comment-menu-link" href="/pages/viewpage.action?pageId=33229931&amp;showComments=true&amp;showCommentArea=true#addcomment"  class="add-comment"   title="Add a Comment">
+                   <span>注释</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="add-attachment-link" href="/pages/viewpageattachments.action?pageId=33229931"  class="add-attachment"  accessKey="a"  title="">
+                   <span>附件</span></a>        </li>
+                            </ul>
+                    </div>
+    </li>
+                    
+            <li class="normal ajs-menu-item">
+        <a id="action-menu-link" class="action trigger ajs-menu-title" href="#"><span><span>工具</span></span></a>         <div class="assistive ajs-drop-down">
+                        <ul  id="action-menu-link-primary"                 class="section-primary first">
+                                        <li>
+    
+        
+    
+    <a  id="view-attachments-link" href="/pages/viewpageattachments.action?pageId=33229931"  class="action-view-attachments"  accessKey="a"  title="View Attachments">
+                   <span>附件 (8)</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="action-view-history-link" href="/pages/viewpreviousversions.action?pageId=33229931"  class="action-view-history"   title="">
+                   <span>页面历史</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="action-page-permissions-link" href="/pages/viewinfo.action?pageId=33229931"  class="action-page-permissions"   title="Edit restrictions">
+                   <span>Restrictions</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="edit-in-word" href="/plugins/servlet/confluence/editinword/33229931/content/Confluence-Page-33229931.doc"  class=""   title="">
+                    <span>
+                <img alt="Edit in Word" src="/download/resources/com.atlassian.confluence.extra.officeconnector:editinworditem3/editinwordblue.png" height="16" width="16" title="Edit in Word">
+                Edit in Word
+            </span></a>        </li>
+                            </ul>
+                        <ul  id="action-menu-link-marker"                 class="section-marker">
+                                        <li>
+    
+        
+    
+    <a  id="page-favourite" href="/labels/addfavourite.action?entityId=33229931&amp;atl_token=8475565494764448964c368b8662fae6beb9e9e7"  class="action-page-favourite"   title="">
+                   <span>收藏</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="page-watch" href="/pages/addpagenotification.action?pageId=33229931&amp;atl_token=8475565494764448964c368b8662fae6beb9e9e7"  class="action-page-watching"   title="">
+                   <span>监视</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="page-unwatch" href="/pages/removepagenotification.action?pageId=33229931&amp;atl_token=8475565494764448964c368b8662fae6beb9e9e7"  class="action-page-watching selected ie-page-watching-selected inactive"   title="">
+                   <span>Stop Watching</span></a>        </li>
+                            </ul>
+                        <ul  id="action-menu-link-secondary"                 class="section-secondary">
+                                        <li>
+    
+        
+    
+    <a  id="view-page-info-link" href="/pages/viewinfo.action?pageId=33229931"  class="action-view-info"   title="">
+                   <span>信息</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="link-to-page-link" href="/pages/viewinfo.action?pageId=33229931"  class=""   title="Link to this Page">
+                   <span>Link to this Page&hellip;</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="view-in-hierarchy-link" href="/pages/listpages-dirview.action?key=PRODUCT&amp;openId=33229931#selectedPageInHierarchy"  class=""   title="">
+                   <span>View in Hierarchy</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="action-view-source-link" href="/pages/viewpagesrc.action?pageId=33229931"  class="action-view-source popup-link"   title="">
+                   <span>查看Wiki Markup</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="action-export-pdf-link" href="/spaces/flyingpdf/pdfpageexport.action?pageId=33229931"  class=""   title="">
+                   <span>Export to PDF</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="action-export-word-link" href="/exportword?pageId=33229931"  class="action-export-word"   title="">
+                   <span>导出到Word格式</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="import-word-doc" href="/pages/worddav/uploadimport.action?pageId=33229931"  class=""   title="">
+                   <span>Import Word Document</span></a>        </li>
+                            </ul>
+                        <ul  id="action-menu-link-modify"                 class="section-modify">
+                                        <li>
+    
+        
+    
+    <a  id="action-copy-page-link" href="/pages/copypage.action?idOfPageToCopy=33229931&amp;spaceKey=PRODUCT"  class="action-copy"   title="">
+                   <span>拷贝</span></a>        </li>
+                                        <li>
+    
+        
+    
+    <a  id="action-move-page-dialog-link" href="/pages/viewpage.action?pageId=33229931"  class="action-move"   title="">
+                   <span>移动</span></a>        </li>
+                            </ul>
+                    </div>
+    </li>
+            </ul>
+    </div>
+
+	    
+	    <h1 id="title-heading" class="pagetitle">
+	        	            <a href="/display/PRODUCT"><img class="logo global" src="/images/logo/confluence_48_white.png" alt=""></a>	        	
+			<span id="title-text">
+							            <a href="/pages/viewpage.action?pageId=33229931">HCG值班安排</a>
+    						</span>
+	    </h1>
+	</div>
+
+    
+
+    
+    
+    
+    <div id="content" class="page view">
+    
+
+
+
+<div id="link-to-page-fields" class="hidden parameters">
+    <input type="hidden" id="linkToThisPageHeading" value="Link to this Page">
+    <input type="hidden" id="linkToThisPageLink" value="链接">
+    <input type="hidden" id="linkToThisPageTinyLink" value="缩略链接">
+    <input type="hidden" id="linkToThisPageWikiMarkup" value="Wiki标记符">
+    <input type="hidden" id="linkToThisPageClose" value="关闭">
+</div>
+<fieldset class="hidden parameters">
+    <input type="hidden" title="movePageDialogViewPageTitle" value="Move Page &ndash; &#8216;HCG值班安排&#8217;">
+    <input type="hidden" title="movePageDialogEditPageTitle" value="Set Page Location">
+    <input type="hidden" title="movePageDialogMoveButton" value="移动">
+    <input type="hidden" title="movePageDialogCancelButton" value="取消">
+    <input type="hidden" title="movePageDialogBrowsePanelTip" value="您可以通在页面树中拖动的方式来移动一个高亮的页面到新位置.">
+    <input type="hidden" title="movePageDialogSearchPanel" value="Search">
+    <input type="hidden" title="movePageDialogHistoryPanel" value="Recently Viewed">
+    <input type="hidden" title="movePageDialogHistoryNoResults" value="There were no recently viewed pages found.">
+    <input type="hidden" title="movePageDialogLocationPanel" value="Known Location">
+    <input type="hidden" title="movePageDialogLocationNotFound" value="The specified page was not found.">
+    <input type="hidden" title="movePageDialogBrowsePa                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                

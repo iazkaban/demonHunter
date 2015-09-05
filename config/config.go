@@ -3,7 +3,6 @@ package config
 import (
 	"encoding/json"
 	"errors"
-	"fmt"
 	"os"
 )
 
@@ -15,6 +14,9 @@ type HunterConfig struct {
 type Server struct {
 	StartUrls []string
 	UrlRules  []string
+	UrlUnruly []string
+	LimitHost []string
+	//UrlRegExpRules []*regexp.Regexp
 }
 
 type System struct {
@@ -44,9 +46,13 @@ func LoadConfigFile(filename string) error {
 		return errors.New("config file is empty")
 	}
 	err = json.Unmarshal(content[:len], &Config)
-	fmt.Println(Config)
 	if err != nil {
 		return err
 	}
+	/*
+		for i, v := range Config.Server.UrlRules {
+			Config.Server.UrlRegExpRules[i] = regexp.MustCompile(v)
+		}
+	*/
 	return nil
 }

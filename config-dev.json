@@ -1,19 +1,17 @@
 {
     "server":{
-        "starturls":[
+        "url":[
             "http://baidu.com",
-            "http://taobao.com"
-        ],
-        "urlrules":[
-        ]
+            "http://qq.com"
+            ]
     },
     "login":{
-        "getvalues":{},
-        "postvalues":{},
-        "loginurl":""
-    },
-    "system":{
-        "goroutinecounts":10,
-        "timesleep":100
+        "values":{
+            "url":"http://www.baidu.com",
+            "post":{
+                "username":"suilongfei",
+                "password":"password"
+            }
+        }
     }
 }
