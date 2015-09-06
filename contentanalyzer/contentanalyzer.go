@@ -6,6 +6,7 @@ import (
 	"crypto/md5"
 	"errors"
 	"fmt"
+	"io"
 	"net/http"
 	"net/url"
 	"os"
@@ -118,17 +119,25 @@ func Analyzer(page *Page) error {
 		return err
 	}
 	defer response.Body.Close()
+	full_body := []byte()
 	body := make([]byte, 1048576)
-	i, _ := response.Body.Read(body)
-	body = body[:i]
-	page.Body = body
-	page.Links = GetUrls(body)
-	fmt.Println(config.Config.Server.UrlRules)
+	for {
+		i, _ := response.Body.Read(body)
+		full_body += body[:]
+		if body[i] == io.EOF {
+			break
+		}
+	}
+	page.Body = full_body[:]
+	page.Links = GetUrls(full_body)
+	fmt.Println(page.Url)
 	for _, v := range config.Config.Server.UrlRules {
 		reg := regexp.MustCompile(v)
-		fmt.Println(page.Url)
 		if reg.FindString(page.Url) != "" {
-			fmt.Println("a")
+			fmt.Println(string(body))
+			i, _ = response.Body.Read(body)
+			body = body[:i]
+			fmt.Println(string(body))
 			err = saveFile(body)
 			if err != nil {
 				fmt.Println(err)
@@ -206,7 +215,6 @@ func checkLimitUrl(iurl string) bool {
 }
 
 func saveFile(body []byte) error {
-	fmt.Println("in")
 	static_resource := [][]byte{
 		[]byte("/s/zh/2154/29/131/_/download/superbatch/css/batch.css"),
 		[]byte("/s/zh/2154/29/131/_/download/superbatch/css/batch.css?media=Println"),
