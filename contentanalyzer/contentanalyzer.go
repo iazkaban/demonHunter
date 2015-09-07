@@ -119,26 +119,23 @@ func Analyzer(page *Page) error {
 		return err
 	}
 	defer response.Body.Close()
-	full_body := []byte()
-	body := make([]byte, 1048576)
+	full_body := make([]byte, 1)
+	body := make([]byte, 1)
 	for {
-		i, _ := response.Body.Read(body)
-		full_body += body[:]
-		if body[i] == io.EOF {
+		_, err = response.Body.Read(body)
+		full_body = append(full_body, body...)
+		if err == io.EOF {
 			break
 		}
 	}
-	page.Body = full_body[:]
+	page.Body = full_body
 	page.Links = GetUrls(full_body)
 	fmt.Println(page.Url)
 	for _, v := range config.Config.Server.UrlRules {
 		reg := regexp.MustCompile(v)
 		if reg.FindString(page.Url) != "" {
-			fmt.Println(string(body))
-			i, _ = response.Body.Read(body)
-			body = body[:i]
-			fmt.Println(string(body))
-			err = saveFile(body)
+			fmt.Println(string(full_body))
+			err = saveFile(full_body)
 			if err != nil {
 				fmt.Println(err)
 			}
