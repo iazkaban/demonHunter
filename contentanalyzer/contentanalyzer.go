@@ -26,6 +26,7 @@ var lastSetUrlTime time.Time
 var lastGetUrlTime time.Time
 var maxSetUrlTimeTimeout time.Duration
 var maxGetUrlTimeTimeout time.Duration
+var CurrentDir string
 
 type Page struct {
 	Url      string
@@ -35,6 +36,9 @@ type Page struct {
 }
 
 func init() {
+	if dir, err := os.Getwd(); err == nil {
+		CurrentDir = dir
+	}
 	urllist = list.New()
 	urllist.Init()
 	urlmap = make(map[[16]byte]bool, 1024)
@@ -130,11 +134,9 @@ func Analyzer(page *Page) error {
 	}
 	page.Body = full_body
 	page.Links = GetUrls(full_body)
-	fmt.Println(page.Url)
 	for _, v := range config.Config.Server.UrlRules {
 		reg := regexp.MustCompile(v)
 		if reg.FindString(page.Url) != "" {
-			fmt.Println(string(full_body))
 			err = saveFile(full_body)
 			if err != nil {
 				fmt.Println(err)
@@ -261,13 +263,6 @@ func saveFile(body []byte) error {
 	reg := regexp.MustCompile(`<title>.+</title>`)
 	title := reg.Find(body)
 	title = bytes.Replace(bytes.Replace(title, []byte("<title>"), []byte{}, -1), []byte("</title>"), []byte{}, -1)
-	file1, err := os.Create("/Users/Logan/Developer/gopath/src/github.com/iazkaban/demonHunter/result/" + string(title) + ".src.html")
-	if err != nil {
-		fmt.Println(err)
-		return err
-	}
-	defer file1.Close()
-	file1.Write(body)
 	domain_len := len([]byte("http://wiki.elex-tech.com"))
 	for _, value := range static_resource {
 		source_len := len(value)
@@ -277,7 +272,7 @@ func saveFile(body []byte) error {
 		body = bytes.Replace(body, value, result, -1)
 	}
 
-	file, err := os.Create("/Users/Logan/Developer/gopath/src/github.com/iazkaban/demonHunter/result/" + string(title) + ".html")
+	file, err := os.Create(CurrentDir + "/result/" + string(title) + ".html")
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
@@ -285,6 +280,5 @@ func saveFile(body []byte) error {
 	}
 	defer file.Close()
 	_, err = file.Write(body)
-	os.Exit(1)
 	return nil
 }
