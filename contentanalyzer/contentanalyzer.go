@@ -26,6 +26,7 @@ var lastSetUrlTime time.Time
 var lastGetUrlTime time.Time
 var maxSetUrlTimeTimeout time.Duration
 var maxGetUrlTimeTimeout time.Duration
+var CurrentDir string
 
 type Page struct {
 	Url      string
@@ -35,6 +36,9 @@ type Page struct {
 }
 
 func init() {
+	if dir, err := os.Getwd(); err == nil {
+		CurrentDir = dir
+	}
 	urllist = list.New()
 	urllist.Init()
 	urlmap = make(map[[16]byte]bool, 1024)
@@ -268,7 +272,7 @@ func saveFile(body []byte) error {
 		body = bytes.Replace(body, value, result, -1)
 	}
 
-	file, err := os.Create("/Users/Logan/Developer/gopath/src/github.com/iazkaban/demonHunter/result/" + string(title) + ".html")
+	file, err := os.Create(CurrentDir + "/result/" + string(title) + ".html")
 	if err != nil {
 		fmt.Println(err)
 		os.Exit(1)
