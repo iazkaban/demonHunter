@@ -130,11 +130,9 @@ func Analyzer(page *Page) error {
 	}
 	page.Body = full_body
 	page.Links = GetUrls(full_body)
-	fmt.Println(page.Url)
 	for _, v := range config.Config.Server.UrlRules {
 		reg := regexp.MustCompile(v)
 		if reg.FindString(page.Url) != "" {
-			fmt.Println(string(full_body))
 			err = saveFile(full_body)
 			if err != nil {
 				fmt.Println(err)
@@ -261,13 +259,6 @@ func saveFile(body []byte) error {
 	reg := regexp.MustCompile(`<title>.+</title>`)
 	title := reg.Find(body)
 	title = bytes.Replace(bytes.Replace(title, []byte("<title>"), []byte{}, -1), []byte("</title>"), []byte{}, -1)
-	file1, err := os.Create("/Users/Logan/Developer/gopath/src/github.com/iazkaban/demonHunter/result/" + string(title) + ".src.html")
-	if err != nil {
-		fmt.Println(err)
-		return err
-	}
-	defer file1.Close()
-	file1.Write(body)
 	domain_len := len([]byte("http://wiki.elex-tech.com"))
 	for _, value := range static_resource {
 		source_len := len(value)
@@ -285,6 +276,5 @@ func saveFile(body []byte) error {
 	}
 	defer file.Close()
 	_, err = file.Write(body)
-	os.Exit(1)
 	return nil
 }
